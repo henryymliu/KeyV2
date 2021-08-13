@@ -11,14 +11,22 @@ function outer_cherry_stem(slop) = [7.2 - slop * 2, 5.5 - slop * 2];
 function outer_cherry_stabilizer_stem(slop) = [4.85 - slop * 2, 6.05 - slop * 2];
 
 // box (kailh) switches have a bit less to work with
-function outer_box_cherry_stem(slop) = [6 - slop, 6 - slop];
+function outer_box_cherry_stem(slop) = [5 - slop, 5 - slop];
 
 // .005 purely for aesthetics, to get rid of that ugly crosshatch
 function cherry_cross(slop, extra_vertical = 0) = [
   // horizontal tine
-  [4.03 + slop, 1.25 + slop / 3],
+  //[4.03 + slop, 1.25 + slop / 3],
   // vertical tine
-  [1.15 + slop / 3, 4.23 + extra_vertical + slop / 3 + SMALLEST_POSSIBLE],
+  //[1.15 + slop / 3, 4.23 + extra_vertical + slop / 3 + SMALLEST_POSSIBLE],
+
+  // horizontal tine
+  // spec should be 4.15 length on both, but as we are making this open on all horizontal
+  // sides then we just set it to some larger value
+  // cherry spec tine width is 1.17+/-0.02
+  [6, 1.22],
+  // vertical tine
+  [1.22, 6 + SMALLEST_POSSIBLE],
 ];
 
 // actual mm key width and height
